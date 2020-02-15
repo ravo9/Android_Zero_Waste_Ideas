@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zero Waste Pomysły</string>
+    <string name="connection_problem">Problem z połączeniem</string>
+    <string name="there_is_a_problem_connecting" translatable="false">Wystąpił problem podczas połączenia z serwerem.
+        Naciśnik OK aby spróbować ponownie. (Błąd 1599)
+    </string>
+    <string name="find_or_choose_the_kind">Wyszukaj lub wybierz rodzaj odpadu z listy poniżej, aby dowiedzieć
+        się jak go prawidłowo zutylizować
+    </string>
+    <string name="picture_unavailable">Brak zdjęcia</string>
+    <string name="loading_the_item">Wczytywanie wybranego elementu...</string>
+    <string name="try_again">Spróbuj ponownie</string>
+    <string name="loading">Uruchamianie aplikacji...</string>
+    <string name="footer">Zero Waste Pomysły ® 2020</string>
+    <string name="please_check_your_internet_connection">Sprawdź połączenie z Internetem</string>
+    <string name="thank_you_for_downloading_bin">Dziękujemy za pobranie aplikacji “Zero Waste Pomysły”!</string>
+    <string name="we_hope_that_our_work">Mamy nadzieję, że nasza praca pomaga promować ekologiczny styl życia.</string>
+    <string name="we_will_be_very_grateful">Będziemy bardzo wdzięczni, jeśli zechcesz wystawić nam ocenę.</string>
+    <string name="if_you_can_see_anything">Jeżeli masz jakiekolwiek uwagi co do naszej aplikacji, prosimy o kontakt pod
+        poniższym adresem email:
+    </string>
+    <string name="huge_special_thanks_to_everyone">
+        Specjalne podziękowania dla ludzi, którzy przyczynili się do powstania aplikacji:\n\n
+
+        Ikona aplikacji utworzona przez Icongeek26 ze strony www.flaticon.com:\n
+        https://www.flaticon.com/authors/icongeek26\n\n
+
+        Czcionka \'Lato\' utworzona przez Łukasza Dziedzica:\n
+        https://fonts.google.com/specimen/Lato\n\n
+
+        Kod widgetu "Circular progress bar" napisany przez M. Reza Nasirloo:\n
+        https://medium.com/@m.reza.nasirloo\n\n
+
+        Ikonka krzyżyka utworzona przez Lyolya ze strony www.flaticon.com:\n
+        https://www.flaticon.com/authors/lyolya\n\n
+
+        Ikonka wyszukiwarki utworzona przez Vectors Market ze strony www.flaticon.com:\n
+        https://www.flaticon.com/authors/vectors-market
+    </string>
+    <string name="privacy_policy_address">https://docs.google.com/document/d/1Hvlz-SVLWPADJCSugBP4tkTM44Se9OgSvRf0uwZmvOc/edit?usp=sharing</string>
+    <string name="privacy_policy_link">Polityka Prywatności (link)</string>
+    <string name="search">Znajdź</string>
+    <string name="show_more">Pokaż więcej</string>
+    <string name="unfortunately_we_cannot_find_anything">
+        Niestety nie mamy takiego elementu w naszej bazie. :(\n\n
+        Kliknij w przycisk poniżej, aby nas o tym anonimowo poinformować. Wówczas postaramy się dodać brakującą rzecz jak najszybciej!
+    </string>
+    <string name="yes_please">Poinformuj</string>
+    <string name="thank_you_well_try_to">
+        Dziękujemy!\n\n
+        Postaramy się dodać brakujący element niebawem!
+    </string>
+</resources>
