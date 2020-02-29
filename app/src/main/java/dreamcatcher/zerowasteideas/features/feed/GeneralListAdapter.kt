@@ -10,10 +10,7 @@ import com.squareup.picasso.Picasso
 import dreamcatcher.zerowasteideas.R
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import kotlinx.android.synthetic.main.grid_single_item.view.*
-import kotlinx.android.synthetic.main.horizontal_row_view.view.*
-import kotlinx.android.synthetic.main.two_items_row.view.left_item
-import kotlinx.android.synthetic.main.two_items_row.view.right_item
-import kotlinx.android.synthetic.main.two_items_with_protip_row.view.*
+
 
 class GeneralListAdapter (private val clickListener: (String) -> Unit) : RecyclerView.Adapter<GeneralListAdapter.ViewHolder>() {
 
@@ -48,24 +45,24 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
         val inflater = LayoutInflater.from(parent.context)
 
         val twoItemsRowView = inflater
-            .inflate(R.layout.two_items_row, parent, false)
-        viewHolder = TwoItemsRowViewHolder(twoItemsRowView)
+            .inflate(R.layout.grid_single_item, parent, false)
+        viewHolder = OwnViewHolder(twoItemsRowView)
 
         return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val twoItemsRowViewHolder = holder as TwoItemsRowViewHolder
+        val twoItemsRowViewHolder = holder as OwnViewHolder
         configureTwoItemsRowView(twoItemsRowViewHolder, position)
     }
 
-    private fun configureTwoItemsRowView(holder: TwoItemsRowViewHolder, position: Int) {
+    private fun configureTwoItemsRowView(holder: OwnViewHolder, position: Int) {
 
         // Set two items views - left and right
         configureLeftAndRightItemsViews(holder, position)
     }
 
-    private fun configureLeftAndRightItemsViews(holder: TwoItemsRowViewHolder, position: Int) {
+    private fun configureLeftAndRightItemsViews(holder: OwnViewHolder, position: Int) {
 
         var view: View? = null
         var item: ItemEntity? = null
@@ -92,7 +89,7 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
                 var imageLink = item.imageLink
 
                 // Set data within the holder
-                view.name.text = name
+                view.title.text = name
 
                 // Set onClickListener
                 val itemId = item?.id
@@ -122,14 +119,7 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
 
     abstract class ViewHolder (view: View) : RecyclerView.ViewHolder(view)
 
-    open inner class TwoItemsRowViewHolder (view: View) : ViewHolder(view) {
-        val views = ArrayList<View>()
-
-        init {
-            views.add(view.left_item)
-            views.add(view.right_item)
-        }
-    }
+    open inner class OwnViewHolder (view: View) : ViewHolder(view)
 
     // Converter grouping items together into 2-items clusters
     private fun convertSingleItemsListIntoClustersList(itemsList: List<ItemEntity>)

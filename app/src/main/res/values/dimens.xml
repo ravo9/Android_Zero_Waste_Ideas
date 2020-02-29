@@ -22,7 +22,7 @@
     <dimen name="elevation_second_floor">20dp</dimen>
 
     <dimen name="grid_single_item_height">350dp</dimen>
-    <dimen name="grid_single_item_padding">12dp</dimen>
+    <dimen name="grid_single_item_padding">20dp</dimen>
 
     <dimen name="grid_single_item_internal_spacing">6dp</dimen>
     <dimen name="grid_single_item_double_internal_spacing">12dp</dimen>

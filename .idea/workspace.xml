@@ -13,16 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e96249d7-b745-4a4e-94eb-b5747086edc7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android_Zero_Waste_Ideas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Android_Zero_Waste_Ideas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/two_items_with_protip_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/two_items_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,21 +46,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1037">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="349">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+              <folding>
+                <element signature="e#51#786#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,21 +119,22 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/detailed_item_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/detailedView/DetailedViewFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/data/database/items/ItemEntity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/data/database/items/ItemsDatabaseInteractor.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/appInfoView/AppInfoViewFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/detailedView/DetailedViewFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedViewModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="185" />
-    <option name="y" value="165" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="135" />
+    <option name="y" value="365" />
     <option name="width" value="1400" />
     <option name="height" value="705" />
   </component>
@@ -236,7 +224,7 @@
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Android_How_About_It_" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
   </component>
   <component name="RecentsManager">
@@ -380,7 +368,7 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Assistant" order="5" weight="0.3295302" />
-      <window_info anchor="right" id="Preview" order="6" visible="true" weight="0.2785235" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.2785235" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -521,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/feed/FeedActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/network/ApiClient.kt" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -630,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1037">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/two_items_row.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -645,11 +619,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="205">
+          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding>
+            <element signature="e#386#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding>
+            <element signature="e#51#786#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
