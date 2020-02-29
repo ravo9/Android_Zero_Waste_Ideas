@@ -24,11 +24,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.iid.FirebaseInstanceId
 import dreamcatcher.zerowasteideas.R
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
-import dreamcatcher.zerowasteideas.data.database.protips.ProtipEntity
 import dreamcatcher.zerowasteideas.features.appInfoView.AppInfoViewFragment
 import dreamcatcher.zerowasteideas.features.detailedView.DetailedViewFragment
 import kotlinx.android.synthetic.main.activity_main_collapsing_toolbar.*
@@ -103,10 +101,10 @@ class FeedActivity : AppCompatActivity() {
         currentFocus?.clearFocus()
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         if (mostRecentSearchPhrase != "") resetSearchResults()
         else super.onBackPressed()
-    }
+    }*/
 
     private fun resetSearchResults() {
         search_engine.text.clear()
@@ -114,7 +112,7 @@ class FeedActivity : AppCompatActivity() {
         searchAction()
     }
 
-    private fun filterResultsToDisplay(phrase: String) {
+    /*private fun filterResultsToDisplay(phrase: String) {
 
         itemsToDisplay.clear()
 
@@ -139,9 +137,9 @@ class FeedActivity : AppCompatActivity() {
             bundle.putString(FirebaseAnalytics.Param.SEARCH_TERM, phrase)
             FirebaseAnalytics.getInstance(this).logEvent(FirebaseAnalytics.Event.SEARCH, bundle)
         }*/
-    }
+    }*/
 
-    private fun nameContainsSearchedPhrase(itemEntity: ItemEntity, phrase: String): Boolean {
+    /*private fun nameContainsSearchedPhrase(itemEntity: ItemEntity, phrase: String): Boolean {
         return (itemEntity.name.toLowerCase().contains(phrase.toLowerCase()))
     }
 
@@ -152,7 +150,7 @@ class FeedActivity : AppCompatActivity() {
             }
         }
         return false
-    }
+    }*/
 
     private fun initializeSearchEngine() {
 
@@ -194,7 +192,9 @@ class FeedActivity : AppCompatActivity() {
 
     private fun searchAction() {
 
-        allowedItemsAmount = 24
+        // Update searching and tags system from BinAssistant when necessary.
+
+        /*allowedItemsAmount = 24
 
         search_button.isEnabled = false
 
@@ -216,7 +216,7 @@ class FeedActivity : AppCompatActivity() {
             }, 100)
         }
 
-        hideKeyboard()
+        hideKeyboard()*/
     }
 
     private fun setupRecyclerView() {
@@ -258,16 +258,6 @@ class FeedActivity : AppCompatActivity() {
         })
     }
 
-    // Before there was a delay implemented to keep the loading screen visible to the user (for few seconds).
-    private fun updateAndLoadProtips() {
-        viewModel.updateProtipsDatabaseWithServer()?.observe(this, Observer<Boolean> {
-
-            if (it == true) {
-                loadProtipsFromDatabase()
-            }
-        })
-    }
-
     private fun loadItemsFromDatabase() {
         viewModel.getAllItems()?.observe(this, Observer<List<ItemEntity>> {
 
@@ -283,22 +273,8 @@ class FeedActivity : AppCompatActivity() {
                     // Mix the items to avoid the same order on every app launch.
                     allItemsList.addAll(it.shuffled())
                     itemsFetchedSuccessfullyFlag = true
-                    sendItemsAndProtipsToAdapter()
+                    sendItemsToAdapter()
                 }
-            }
-        })
-    }
-
-    private fun loadProtipsFromDatabase() {
-        viewModel.getAllProtips()?.observe(this, Observer<List<ProtipEntity>> {
-
-            if (!it.isNullOrEmpty()) {
-
-                // Display fetched items (using adapter)
-                allProtipsList.clear()
-                allProtipsList.addAll(it)
-                protipsFetchedSuccessfullyFlag = true
-                sendItemsAndProtipsToAdapter()
             }
         })
     }
@@ -312,13 +288,13 @@ class FeedActivity : AppCompatActivity() {
         })
     }
 
-    private fun sendItemsAndProtipsToAdapter() {
-        if (itemsFetchedSuccessfullyFlag && protipsFetchedSuccessfullyFlag) {
+    private fun sendItemsToAdapter() {
+        if (itemsFetchedSuccessfullyFlag) {
 
             // Sometimes index is out of bound. It's important to ivestigate this.
             try {
                 itemsToDisplay.addAll(allItemsList)
-                generalListAdapter.setItemsAndProtips(itemsToDisplay.subList(0, allowedItemsAmount), allProtipsList)
+                generalListAdapter.setItems(itemsToDisplay.subList(0, allowedItemsAmount))
 
                 // Hide the loading view
                 showLoadingView(false)
@@ -342,9 +318,7 @@ class FeedActivity : AppCompatActivity() {
 
     private fun retryConnection() {
         viewModel.updateItemsDatabaseWithServer()?.removeObservers(this)
-        viewModel.updateProtipsDatabaseWithServer()?.removeObservers(this)
         updateAndLoadItems()
-        updateAndLoadProtips()
     }
 
     private fun hideKeyboard() {

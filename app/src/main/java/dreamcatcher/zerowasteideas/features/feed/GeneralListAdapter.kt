@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import dreamcatcher.zerowasteideas.R
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
-import dreamcatcher.zerowasteideas.data.database.protips.ProtipEntity
 import kotlinx.android.synthetic.main.grid_single_item.view.*
 import kotlinx.android.synthetic.main.horizontal_row_view.view.*
 import kotlinx.android.synthetic.main.two_items_row.view.left_item
@@ -19,23 +18,15 @@ import kotlinx.android.synthetic.main.two_items_with_protip_row.view.*
 class GeneralListAdapter (private val clickListener: (String) -> Unit) : RecyclerView.Adapter<GeneralListAdapter.ViewHolder>() {
 
     private var itemsList: List<List<ItemEntity>> = ArrayList()
-    private var protipsList: List<ProtipEntity> = ArrayList()
-    private var usedProtipsList: List<ProtipEntity> = ArrayList()
     private var context: Context? = null
-
-    companion object {
-        internal val VIEW_TYPE_TWO_ITEMS_ROW = 0
-        internal val VIEW_TYPE_TWO_ITEMS_WITH_PROTIP_ROW = 1
-    }
 
     fun updateItems(items: List<ItemEntity>) {
         this.itemsList = convertSingleItemsListIntoClustersList(items)
         notifyDataSetChanged()
     }
 
-    fun setItemsAndProtips(items: List<ItemEntity>, protips: List<ProtipEntity>) {
+    fun setItems(items: List<ItemEntity>) {
         this.itemsList = convertSingleItemsListIntoClustersList(items)
-        this.protipsList = protips
         notifyDataSetChanged()
     }
 
@@ -48,8 +39,7 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
     }
 
     override fun getItemViewType(position: Int): Int {
-        // Return 0 or 1 per each position to indicate viewtype.
-        return position % 2
+        return position
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -57,65 +47,22 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
         var viewHolder: ViewHolder? = null
         val inflater = LayoutInflater.from(parent.context)
 
-        when (viewType) {
+        val twoItemsRowView = inflater
+            .inflate(R.layout.two_items_row, parent, false)
+        viewHolder = TwoItemsRowViewHolder(twoItemsRowView)
 
-            VIEW_TYPE_TWO_ITEMS_ROW -> {
-                val twoItemsRowView = inflater
-                    .inflate(R.layout.two_items_row, parent, false)
-                viewHolder = TwoItemsRowViewHolder(twoItemsRowView)
-            }
-
-            VIEW_TYPE_TWO_ITEMS_WITH_PROTIP_ROW -> {
-                val twoItemsWithProtipRowView = inflater
-                    .inflate(R.layout.two_items_with_protip_row, parent, false)
-                viewHolder = TwoItemsWithProtipRowViewHolder(twoItemsWithProtipRowView)
-            }
-        }
-
-        return viewHolder!!
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        when (holder.itemViewType) {
-
-            VIEW_TYPE_TWO_ITEMS_ROW -> {
-                val twoItemsRowViewHolder = holder as TwoItemsRowViewHolder
-                configureTwoItemsRowView(twoItemsRowViewHolder, position)
-
-                // Code that works for the first search (RecyclerView speedUp) - views recycling.
-                /*if (firstLoading) {
-                    val twoItemsRowView = inflater.inflate(R.layout.two_items_row, parent, false)
-                    viewHolder = TwoItemsRowViewHolder(twoItemsRowView)
-                    (rowViewsList as ArrayList).add(viewHolder)
-
-                } else {
-                    viewHolder = rowViewsList.get(0)
-                    (rowViewsList as ArrayList).removeAt(0)
-                    (rowViewsList as ArrayList).add(viewHolder)
-                }*/
-            }
-
-            VIEW_TYPE_TWO_ITEMS_WITH_PROTIP_ROW -> {
-                val twoItemsWithProtipRowViewHolder = holder as TwoItemsWithProtipRowViewHolder
-                configureTwoItemsWithProtipRowView(twoItemsWithProtipRowViewHolder, position)
-            }
-        }
+        val twoItemsRowViewHolder = holder as TwoItemsRowViewHolder
+        configureTwoItemsRowView(twoItemsRowViewHolder, position)
     }
 
     private fun configureTwoItemsRowView(holder: TwoItemsRowViewHolder, position: Int) {
 
         // Set two items views - left and right
         configureLeftAndRightItemsViews(holder, position)
-    }
-
-    private fun configureTwoItemsWithProtipRowView(holder: TwoItemsWithProtipRowViewHolder, position: Int) {
-
-        // Set two items views - left and right
-        configureLeftAndRightItemsViews(holder, position)
-
-        // Set protip view
-        configureProtipView(holder, position)
     }
 
     private fun configureLeftAndRightItemsViews(holder: TwoItemsRowViewHolder, position: Int) {
@@ -173,28 +120,6 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
         }
     }
 
-    private fun configureProtipView(holder: TwoItemsWithProtipRowViewHolder, position: Int) {
-
-        // Get random protip from the original (fetched) list
-        // Move this protip into 'used' list
-        // If all protips from the original list have been used, then use random one from the 'used' list
-
-        val protip: ProtipEntity?
-        val protipText: String?
-
-        if (!protipsList.isEmpty()) {
-            protip =  protipsList.random()
-            protipText = protip.protipText
-            (protipsList as ArrayList).remove(protip)
-            (usedProtipsList  as ArrayList).add(protip)
-        } else {
-            protip =  usedProtipsList.random()
-            protipText = protip.protipText
-        }
-
-        holder.views[2].protip_text.text = protipText
-    }
-
     abstract class ViewHolder (view: View) : RecyclerView.ViewHolder(view)
 
     open inner class TwoItemsRowViewHolder (view: View) : ViewHolder(view) {
@@ -203,13 +128,6 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
         init {
             views.add(view.left_item)
             views.add(view.right_item)
-        }
-    }
-
-    inner class TwoItemsWithProtipRowViewHolder (view: View) : TwoItemsRowViewHolder(view) {
-
-        init {
-            views.add(view.protip_item)
         }
     }
 
