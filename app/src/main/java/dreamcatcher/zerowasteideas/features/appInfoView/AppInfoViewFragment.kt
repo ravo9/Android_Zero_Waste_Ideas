@@ -44,7 +44,7 @@ class AppInfoViewFragment : BasicFragment() {
         }
 
         // Setup Facebook button
-        btn_facebook.setOnClickListener{
+        /*btn_facebook.setOnClickListener{
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_address)))
             startActivity(browserIntent)
 
@@ -53,12 +53,12 @@ class AppInfoViewFragment : BasicFragment() {
             if (context != null) {
                 //FirebaseAnalytics.getInstance(context).logEvent(getString(R.string.analytics_event_feedback_stars_clicked), null)
             }
-        }
+        }*/
 
         // Setup privacy policy click listener
-        privacyPolicyLink.setOnClickListener {
+        /*privacyPolicyLink.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.privacy_policy_address)))
             startActivity(browserIntent)
-        }
+        }*/
     }
 }

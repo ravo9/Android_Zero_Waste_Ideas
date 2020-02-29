@@ -55,7 +55,7 @@ class DetailedViewFragment : BasicFragment() {
     private fun setupDetailedView(item: ItemEntity) {
 
         // Set item's name
-        detailed_item_view_name.text = item.name
+        /*detailed_item_view_name.text = item.name
 
         // Set bin type's text
         detailed_item_view_recycling_steps.text = item.binType
@@ -79,7 +79,7 @@ class DetailedViewFragment : BasicFragment() {
         catch (e: Exception) {
             picture_placeholder_text.visibility = View.VISIBLE
             Log.e("Exception", e.message);
-        }
+        }*/
 
         showLoadingView(false)
     }

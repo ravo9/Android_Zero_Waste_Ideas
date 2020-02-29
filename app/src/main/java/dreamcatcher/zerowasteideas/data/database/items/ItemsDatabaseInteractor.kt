@@ -38,11 +38,11 @@ class ItemsDatabaseInteractor() {
                 itemsSet.forEach {
                     val itemEntity = ItemEntity(
                         id = it.id,
-                        name = it.name,
-                        tags = it.tags.split(" "),
-                        imageLink = it.imageLink,
-                        binType = it.binType,
-                        additionalInformation = it.additionalInformation)
+                        authorName = it.authorName,
+                        title = it.title,
+                        description = it.description,
+                        //tags = it.tags.split(" "),
+                        imageLink = it.imageLink)
                     launch {
                         itemsDatabase?.getItemsDao()?.insertNewItem(itemEntity)
                     }

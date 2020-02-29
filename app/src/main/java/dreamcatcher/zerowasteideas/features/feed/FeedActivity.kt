@@ -48,18 +48,15 @@ class FeedActivity : AppCompatActivity() {
     private val allItemsList = ArrayList<ItemEntity>()
     private val itemsToDisplay = ArrayList<ItemEntity>()
 
-    private val allProtipsList = ArrayList<ProtipEntity>()
-
     private var itemsFetchedSuccessfullyFlag = false
-    private var protipsFetchedSuccessfullyFlag = false
 
     private var toastMessage: Toast? = null
 
     private val handler = Handler()
 
-    private var allowedItemsAmount = 24
+    private var allowedItemsAmount = 10
 
-    private var mostRecentSearchPhrase = ""
+    //private var mostRecentSearchPhrase = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,11 +74,8 @@ class FeedActivity : AppCompatActivity() {
         // Catch and handle potential network issues
         subscribeForNetworkError()
 
-        // Fetch items (products) from the backend and load them into the view
+        // Fetch items from the backend and load them into the view
         updateAndLoadItems()
-
-        // Fetch protips from the backend and load them into the view
-        updateAndLoadProtips()
 
         // Initialize search engine
         initializeSearchEngine()
@@ -93,7 +87,7 @@ class FeedActivity : AppCompatActivity() {
         initializeShowMoreButton()
 
         // Initialize "Yes please" button
-        initializeYesPleaseButton()
+        //initializeYesPleaseButton()
 
         // Initialize notifications service
         //initializeNotificationsService()
@@ -332,16 +326,6 @@ class FeedActivity : AppCompatActivity() {
                 //Log.e("Exception", e.message);
             }
         }
-    }
-
-    private fun setRecyclerViewHeightProgramatically(itemsAmount: Int) {
-        val params = general_recyclerview.getLayoutParams()
-        val rowHeight = 130
-        val rowWithProtipHeight = 300
-        var height = ((itemsAmount / 4) * rowHeight + (itemsAmount / 4) * rowWithProtipHeight)
-        if (itemsAmount%4 == 1  || itemsAmount%4 == 2) height += rowHeight
-        if (itemsAmount%4 == 3) height += rowWithProtipHeight
-        params.height = height
     }
 
     private fun displayNetworkProblemMessage() {

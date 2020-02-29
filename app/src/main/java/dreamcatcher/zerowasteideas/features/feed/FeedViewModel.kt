@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import dreamcatcher.zerowasteideas.data.database.protips.ProtipEntity
 import dreamcatcher.zerowasteideas.data.repositories.ItemsRepository
-import dreamcatcher.zerowasteideas.data.repositories.ProtipsRepository
 
 class FeedViewModel : ViewModel() {
 
