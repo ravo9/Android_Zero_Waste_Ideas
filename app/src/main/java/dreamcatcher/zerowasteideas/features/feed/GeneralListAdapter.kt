@@ -41,14 +41,9 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
-        var viewHolder: ViewHolder? = null
         val inflater = LayoutInflater.from(parent.context)
-
-        val twoItemsRowView = inflater
-            .inflate(R.layout.grid_single_item, parent, false)
-        viewHolder = OwnViewHolder(twoItemsRowView)
-
-        return viewHolder
+        val singleItemView = inflater.inflate(R.layout.grid_single_item, parent, false)
+        return OwnViewHolder(singleItemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
