@@ -43,18 +43,6 @@
                         android:layout_height="@dimen/detailed_view_image_length"
                         android:layout_marginTop="70dp">
 
-                    <TextView
-                            android:id="@+id/picture_placeholder_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="@string/picture_unavailable"
-                            android:textSize="16sp"
-                            android:letterSpacing="0.03"
-                            android:textColor="@color/colorTextAlternative"
-                            android:visibility="invisible"
-                            tools:visibility="visible"/>
-
                     <ImageView
                             android:id="@+id/thumbnail"
                             android:layout_width="@dimen/detailed_view_image_length"
@@ -66,7 +54,7 @@
                 </RelativeLayout>
 
                 <TextView
-                        android:id="@+id/detailed_item_view_name"
+                        android:id="@+id/title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/detailed_view_vertical_side_spacing"
@@ -76,7 +64,7 @@
                         android:letterSpacing="0.05"/>
 
                 <TextView
-                        android:id="@+id/detailed_item_view_recycling_steps"
+                        android:id="@+id/description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/detailed_view_vertical_side_spacing"
@@ -85,14 +73,6 @@
                         android:textSize="17sp"
                         android:letterSpacing="0.04"
                         android:textAllCaps="true"/>
-
-                <TextView
-                        android:id="@+id/detailed_item_view_additional_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/detailed_view_vertical_side_spacing"
-                        android:layout_marginEnd="@dimen/detailed_view_vertical_side_spacing"
-                        android:layout_marginTop="40dp"/>
 
                 <include
                         layout="@layout/footer"

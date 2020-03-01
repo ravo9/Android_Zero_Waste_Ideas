@@ -12,7 +12,7 @@
             android:paddingEnd="40dp"
             android:paddingTop="24dp"
             android:paddingBottom="24dp"
-            android:text="@string/unfortunately_we_cannot_find_anything"/>
+            android:text=""/>
 
     <Button
             style="@style/ButtonStyle"

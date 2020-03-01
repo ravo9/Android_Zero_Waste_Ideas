@@ -9,6 +9,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="40dp"
-            android:text="@string/thank_you_well_try_to"/>
+            android:text=""/>
 
 </LinearLayout>

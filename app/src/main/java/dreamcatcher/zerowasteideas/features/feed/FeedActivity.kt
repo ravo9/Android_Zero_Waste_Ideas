@@ -6,15 +6,9 @@ import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
-import android.view.inputmethod.EditorInfo
+import android.view.animation.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -76,7 +70,7 @@ class FeedActivity : AppCompatActivity() {
         updateAndLoadItems()
 
         // Initialize search engine
-        initializeSearchEngine()
+        //initializeSearchEngine()
 
         // Initialize app info button
         initializeAppInfoButton()
@@ -106,11 +100,11 @@ class FeedActivity : AppCompatActivity() {
         else super.onBackPressed()
     }*/
 
-    private fun resetSearchResults() {
+    /*private fun resetSearchResults() {
         search_engine.text.clear()
         allowedItemsAmount = 24
         searchAction()
-    }
+    }*/
 
     /*private fun filterResultsToDisplay(phrase: String) {
 
@@ -152,7 +146,7 @@ class FeedActivity : AppCompatActivity() {
         return false
     }*/
 
-    private fun initializeSearchEngine() {
+    /*private fun initializeSearchEngine() {
 
         search_engine.addTextChangedListener(object : TextWatcher {
 
@@ -188,7 +182,7 @@ class FeedActivity : AppCompatActivity() {
         search_button.setOnClickListener{
             searchAction()
         }
-    }
+    }*/
 
     private fun searchAction() {
 
@@ -375,6 +369,12 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun initializeAppInfoButton() {
+
+        val rotateAnimation = RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        rotateAnimation.duration = 2500
+        rotateAnimation.interpolator = DecelerateInterpolator()
+        rotateAnimation.repeatCount = Animation.INFINITE
+        app_info_button.startAnimation(rotateAnimation)
 
         app_info_button.setOnClickListener {
 
