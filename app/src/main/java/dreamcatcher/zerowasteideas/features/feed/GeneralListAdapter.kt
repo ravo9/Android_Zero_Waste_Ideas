@@ -14,16 +14,16 @@ import kotlinx.android.synthetic.main.grid_single_item.view.*
 
 class GeneralListAdapter (private val clickListener: (String) -> Unit) : RecyclerView.Adapter<GeneralListAdapter.ViewHolder>() {
 
-    private var itemsList: List<List<ItemEntity>> = ArrayList()
+    private var itemsList: List<ItemEntity> = ArrayList()
     private var context: Context? = null
 
     fun updateItems(items: List<ItemEntity>) {
-        this.itemsList = convertSingleItemsListIntoClustersList(items)
+        this.itemsList = items
         notifyDataSetChanged()
     }
 
     fun setItems(items: List<ItemEntity>) {
-        this.itemsList = convertSingleItemsListIntoClustersList(items)
+        this.itemsList = items
         notifyDataSetChanged()
     }
 
@@ -47,74 +47,53 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val twoItemsRowViewHolder = holder as OwnViewHolder
-        configureTwoItemsRowView(twoItemsRowViewHolder, position)
+        val viewHolder = holder as OwnViewHolder
+        configureItemView(viewHolder, position)
     }
 
-    private fun configureTwoItemsRowView(holder: OwnViewHolder, position: Int) {
+    private fun configureItemView(holder: OwnViewHolder, position: Int) {
 
-        // Set two items views - left and right
-        configureLeftAndRightItemsViews(holder, position)
-    }
+        val item = itemsList[position]
 
-    private fun configureLeftAndRightItemsViews(holder: OwnViewHolder, position: Int) {
+        try {
 
-        var view: View? = null
-        var item: ItemEntity? = null
+            // Prepare fetched data
+            val title =  item.title
+            val description =  item.description
+            var imageLink = item.imageLink
 
-        for (i in 0..1) {
+            // Set data within the holder
+            holder.title.text = title
+            holder.description.text = description
 
-            // Clear variables
-            view = null
-            item = null
-
-            try {
-
-                // Select view
-                view = holder.views[i]
-
-                // Ensure the view is visible (it could be hidden before)
-                view.visibility = View.VISIBLE
-
-                // Select an item
-                item = itemsList[position][i]
-
-                // Prepare fetched data
-                val name = item.name
-                var imageLink = item.imageLink
-
-                // Set data within the holder
-                view.title.text = name
-
-                // Set onClickListener
-                val itemId = item?.id
-                view.setOnClickListener{
-                    clickListener(itemId)
-                }
-
-                // Load thumbnail
-                if (!imageLink.isNullOrEmpty()) {
-                    Picasso.get().load(imageLink).into(view.thumbnail)
-                    view.thumbnail_placeholder_text.visibility = View.INVISIBLE
-                } else {
-                    view.thumbnail.setImageDrawable(null)
-                    view.thumbnail_placeholder_text.visibility = View.VISIBLE
-                }
-
-            } catch(e: Exception) {
-                Log.e("Exception", e.message);
+            // Set onClickListener
+            val itemId = item.id
+            holder.container.setOnClickListener{
+                clickListener(itemId)
             }
 
-            // Hide second (right-hand side) view, if there is no item to be displayed there
-            if (i == 1 && item == null) {
-                view?.visibility = View.INVISIBLE
+            // Load thumbnail
+            if (!imageLink.isNullOrEmpty()) {
+                Picasso.get().load(imageLink).into(holder.thumbnail)
+                holder.thumbnail.visibility = View.INVISIBLE
+            } else {
+                holder.thumbnail.visibility = View.GONE
             }
+
+        } catch(e: Exception) {
+            Log.e("Exception", e.message);
         }
+
     }
 
     abstract class ViewHolder (view: View) : RecyclerView.ViewHolder(view)
 
-    open inner class OwnViewHolder (view: View) : ViewHolder(view)
+    open inner class OwnViewHolder (view: View) : ViewHolder(view) {
+        val title = view.title
+        val description = view.description
+        val thumbnail = view.thumbnail
+        val container = view.single_item_container
+    }
 
     // Converter grouping items together into 2-items clusters
     private fun convertSingleItemsListIntoClustersList(itemsList: List<ItemEntity>)

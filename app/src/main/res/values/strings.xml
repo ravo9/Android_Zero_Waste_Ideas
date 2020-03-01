@@ -2,19 +2,19 @@
 
     <string name="app_name">Zero Waste Ideas</string>
 
+    <!-- CHANGE -->>
     <string name="app_email" translatable="false">wyrzuctoapp@email.com</string>
 
+    <!-- CHANGE -->>
     <string name="google_play_address" translatable="false">https://play.google.com/store/apps/details?id=development.dreamcatcher.howaboutit</string>
 
+    <!-- CHANGE -->>
     <string name="facebook_address" translatable="false">https://www.facebook.com/wyrzuctoapp</string>
 
+    <!-- CHANGE -->>
     <string name="privacy_policy_address">https://docs.google.com/document/d/1B78TvABuGG5Z68sBFm6ff9eDcceemzXHqXHDce0WDCI/edit?usp=sharing</string>
 
     <string name="privacy_policy_link">Privacy Policy (link)</string>
-
-    <string name="find_or_choose_the_kind">Find or choose the kind of waste from the list, to check
-        how to recycle it properly.
-    </string>
 
     <string name="connection_problem">Connection problem</string>
 
@@ -60,17 +60,6 @@
     <string name="search">Search</string>
 
     <string name="show_more">Show more</string>
-
-    <string name="unfortunately_we_cannot_find_anything">
-        Unfortunately, we cannot find anything like this. :(\n\n
-        Please click on the button below to let us know about the missing item.\n\n
-        We\'ll try to update our database as quick as possible!
-    </string>
-
-    <string name="thank_you_well_try_to">
-        Thank you!\n\n
-        We\'ll try to add the missing item soon!
-    </string>
 
     <string name="yes_please">Yes, please</string>
 

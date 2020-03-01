@@ -8,17 +8,14 @@ data class ItemPojo(
     @SerializedName("ID")
     val id: String,
 
-    @SerializedName("Name")
-    val name: String,
+    @SerializedName("Author Name")
+    val authorName: String,
 
-    @SerializedName("Tags")
-    val tags: String,
+    @SerializedName("Title")
+    val title: String,
+
+    @SerializedName("Description")
+    val description: String,
 
     @SerializedName("Image Link")
-    val imageLink: String,
-
-    @SerializedName("Bin Type")
-    val binType: String,
-
-    @SerializedName("Additional Information")
-    val additionalInformation: List<String>?)
+    val imageLink: String?)

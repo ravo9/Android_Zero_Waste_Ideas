@@ -5,11 +5,8 @@
     <string name="there_is_a_problem_connecting" translatable="false">Wystąpił problem podczas połączenia z serwerem.
         Naciśnik OK aby spróbować ponownie. (Błąd 1599)
     </string>
-    <string name="find_or_choose_the_kind">Wyszukaj lub wybierz rodzaj odpadu z listy poniżej, aby dowiedzieć
-        się jak go prawidłowo zutylizować
-    </string>
     <string name="picture_unavailable">Brak zdjęcia</string>
-    <string name="loading_the_item">Wczytywanie wybranego elementu...</string>
+    <string name="loading_the_item">Wczytywanie wybranego pomysłu...</string>
     <string name="try_again">Spróbuj ponownie</string>
     <string name="loading">Uruchamianie aplikacji...</string>
     <string name="footer">Zero Waste Pomysły ® 2020</string>
@@ -38,17 +35,10 @@
         Ikonka wyszukiwarki utworzona przez Vectors Market ze strony www.flaticon.com:\n
         https://www.flaticon.com/authors/vectors-market
     </string>
+    <!-- CHANGE -->>
     <string name="privacy_policy_address">https://docs.google.com/document/d/1Hvlz-SVLWPADJCSugBP4tkTM44Se9OgSvRf0uwZmvOc/edit?usp=sharing</string>
     <string name="privacy_policy_link">Polityka Prywatności (link)</string>
     <string name="search">Znajdź</string>
     <string name="show_more">Pokaż więcej</string>
-    <string name="unfortunately_we_cannot_find_anything">
-        Niestety nie mamy takiego elementu w naszej bazie. :(\n\n
-        Kliknij w przycisk poniżej, aby nas o tym anonimowo poinformować. Wówczas postaramy się dodać brakującą rzecz jak najszybciej!
-    </string>
     <string name="yes_please">Poinformuj</string>
-    <string name="thank_you_well_try_to">
-        Dziękujemy!\n\n
-        Postaramy się dodać brakujący element niebawem!
-    </string>
 </resources>
