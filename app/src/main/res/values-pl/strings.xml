@@ -35,8 +35,7 @@
         Ikonka wyszukiwarki utworzona przez Vectors Market ze strony www.flaticon.com:\n
         https://www.flaticon.com/authors/vectors-market
     </string>
-    <!-- CHANGE -->>
-    <string name="privacy_policy_address">https://docs.google.com/document/d/1Hvlz-SVLWPADJCSugBP4tkTM44Se9OgSvRf0uwZmvOc/edit?usp=sharing</string>
+    <string name="privacy_policy_address">https://docs.google.com/document/d/1A6EkLYQST7BFVQv2msBu98ftUVujn2sA/edit?usp=sharing</string>
     <string name="privacy_policy_link">Polityka Prywatności (link)</string>
     <string name="search">Znajdź</string>
     <string name="show_more">Pokaż więcej</string>

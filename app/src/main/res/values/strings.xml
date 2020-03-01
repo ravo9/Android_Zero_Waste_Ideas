@@ -10,9 +10,8 @@
 
     <!-- CHANGE -->>
     <string name="facebook_address" translatable="false">https://www.facebook.com/wyrzuctoapp</string>
-
-    <!-- CHANGE -->>
-    <string name="privacy_policy_address">https://docs.google.com/document/d/1B78TvABuGG5Z68sBFm6ff9eDcceemzXHqXHDce0WDCI/edit?usp=sharing</string>
+    
+    <string name="privacy_policy_address">https://docs.google.com/document/d/1XSmg_1mvVomIr7hOAaV0rjZ91JWb7VXm/edit?usp=sharing</string>
 
     <string name="privacy_policy_link">Privacy Policy (link)</string>
 

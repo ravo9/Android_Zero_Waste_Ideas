@@ -12,6 +12,19 @@
     <!-- We need these last two properties to prevent an initial keyboard opening. -->
 
     <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/add_idea_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="78dp"
+            android:src="@drawable/ic_plus"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:elevation="@dimen/elevation_first_floor"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/app_info_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
