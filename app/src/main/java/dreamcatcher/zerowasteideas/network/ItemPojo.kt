@@ -8,7 +8,7 @@ data class ItemPojo(
     @SerializedName("ID")
     val id: String,
 
-    @SerializedName("Author Name")
+    @SerializedName("Author name")
     val authorName: String,
 
     @SerializedName("Title")
@@ -17,5 +17,5 @@ data class ItemPojo(
     @SerializedName("Description")
     val description: String,
 
-    @SerializedName("Image Link")
+    @SerializedName("Image")
     val imageLink: String?)

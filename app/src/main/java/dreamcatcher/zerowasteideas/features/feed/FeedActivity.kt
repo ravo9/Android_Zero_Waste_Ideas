@@ -46,7 +46,7 @@ class FeedActivity : AppCompatActivity() {
 
     private val handler = Handler()
 
-    private var allowedItemsAmount = 10
+    private var allowedItemsAmount = 2
 
     //private var mostRecentSearchPhrase = ""
 

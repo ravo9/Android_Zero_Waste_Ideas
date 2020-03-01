@@ -75,7 +75,6 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
             // Load thumbnail
             if (!imageLink.isNullOrEmpty()) {
                 Picasso.get().load(imageLink).into(holder.thumbnail)
-                holder.thumbnail.visibility = View.INVISIBLE
             } else {
                 holder.thumbnail.visibility = View.GONE
             }
