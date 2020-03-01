@@ -124,4 +124,7 @@ dependencies {
 
     // This is required by In-App Messaging to avoid "double dependency issue"
     implementation "com.google.guava:guava:$guava_version"
+
+    // MailJet
+    implementation "com.mailjet:mailjet-client:4.2.0"
 }

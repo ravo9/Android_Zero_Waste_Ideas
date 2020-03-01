@@ -50,6 +50,10 @@ class NewIdeaViewFragment : BasicFragment() {
         main_content.setOnClickListener {
             hideKeyboard()
         }
+
+        add_idea_button.setOnClickListener{
+            viewModel.sendNewIdea()
+        }
     }
 
     private fun hideKeyboard() {
