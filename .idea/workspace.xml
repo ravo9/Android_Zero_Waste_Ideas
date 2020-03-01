@@ -12,7 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e96249d7-b745-4a4e-94eb-b5747086edc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/new_item_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -23,29 +25,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_top_panel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_top_panel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -58,7 +41,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_S_API_21" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="PWHUT19916004029" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,19 +60,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="398">
+              <caret line="31" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="31" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="1144">
+              <caret line="77" selection-start-line="75" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -152,7 +136,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/network/ApiClient.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/feed/FeedActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_circle.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/detailedView/DetailedViewFragment.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/data/database/items/ItemEntity.kt" />
@@ -163,23 +146,29 @@
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/network/ItemsNetworkInteractor.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/no_results_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/thank_you_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/detailed_item_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/network/Constants.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/network/ApiClient.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/network/ItemPojo.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_top_panel.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/DetailedViewViewModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/DetailedViewFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/detailed_item_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/new_item_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewFragment.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="242" />
-    <option name="y" value="215" />
+    <option name="x" value="135" />
+    <option name="y" value="365" />
     <option name="width" value="1400" />
     <option name="height" value="705" />
   </component>
@@ -232,6 +221,21 @@
               <item name="zerowasteideas" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="feed" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android_Zero_Waste_Ideas" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="zerowasteideas" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="newIdeaView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android_Zero_Waste_Ideas" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="zerowasteideas" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android_Zero_Waste_Ideas" type="1abcf292:AndroidViewProjectNode" />
@@ -314,7 +318,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Android_How_About_It_" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
   </component>
   <component name="RecentsManager">
@@ -322,11 +326,11 @@
       <recent name="dreamcatcher.howaboutit.network" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\Android_Zero_Waste_Ideas\app\src\main\res\layout" />
+      <recent name="C:\workspace\Android_Zero_Waste_Ideas\app\src\main\java\dreamcatcher\zerowasteideas\features" />
       <recent name="C:\workspace\Android_Zero_Waste_Ideas\app\src\main\res\drawable" />
       <recent name="C:\workspace\Android_How_About_It_\app\src\debug\res\values" />
       <recent name="C:\workspace\Android_How_About_It_\app\src\main\res\drawable-v24" />
-      <recent name="C:\workspace\Android_How_About_It_\app\src\main\res\layout" />
-      <recent name="C:\workspace\Android_How_About_It_\app\src\main\res\drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Android_How_About_It_\app\src\main\res\drawable" />
@@ -431,10 +435,37 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49892008" visible="true" weight="0.16174497" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49892008" visible="true" weight="0.16442953" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" sideWeight="0.5010799" side_tool="true" weight="0.22885907" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.49932885" weight="0.32719547" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.41926345" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.3286119" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Assistant" order="5" weight="0.3295302" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.2785235" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49892008" visible="true" weight="0.16510066" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" sideWeight="0.5010799" side_tool="true" weight="0.22885907" />
@@ -459,34 +490,6 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Assistant" order="5" weight="0.3295302" />
       <window_info anchor="right" id="Preview" order="6" weight="0.2785235" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49892008" visible="true" weight="0.22885907" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" sideWeight="0.5010799" side_tool="true" weight="0.22885907" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Resources Explorer" order="7" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.49932885" visible="true" weight="0.34419262" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.4206799" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.3286119" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Assistant" order="5" weight="0.3295302" />
-      <window_info anchor="right" id="Preview" order="6" weight="0.27986577" />
     </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
@@ -494,9 +497,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt</url>
-          <line>347</line>
+          <line>351</line>
           <properties />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewFragment.kt</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewFragment.kt</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -526,16 +541,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/detailedView/DetailedViewFragment.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/features/feed/FeedActivity.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/howaboutit/network/ApiClient.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/appInfoView/AppInfoViewFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -620,13 +625,6 @@
           <folding>
             <element signature="e#45#148#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/general/ZeroWasteIdeasApp.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -722,19 +720,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/detailed_item_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="e#1857#1892#0" expanded="true" />
-            <element signature="e#2087#2122#0" expanded="true" />
-            <element signature="e#2173#2208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -788,14 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/GeneralListAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -818,27 +795,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="267" selection-start-line="267" selection-end-line="267" />
-          <folding>
-            <element signature="e#51#1321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_top_panel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#947#977#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_info_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -854,17 +810,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/general/ZeroWasteIdeasApp.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_top_panel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding>
+            <element signature="e#59#264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/detailed_item_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/new_item_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/newIdeaView/NewIdeaViewFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="e#59#1018#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dreamcatcher/zerowasteideas/features/feed/FeedActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="321" column="32" selection-start-line="321" selection-start-column="32" selection-end-line="321" selection-end-column="32" />
+          <folding>
+            <element signature="e#51#1321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_single_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="31" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="31" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="1144">
+          <caret line="77" selection-start-line="75" selection-end-line="77" />
         </state>
       </provider>
     </entry>

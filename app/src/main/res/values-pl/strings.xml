@@ -40,4 +40,12 @@
     <string name="search">Znajdź</string>
     <string name="show_more">Pokaż więcej</string>
     <string name="yes_please">Poinformuj</string>
+    <string name="title">Tytuł</string>
+    <string name="idea_description">Opis pomysłu...</string>
+    <string name="add_idea">Dodaj pomysł</string>
+    <string name="add_a_new_zero_waste">Dodaj nowy pomysł Zero Waste do aplikacji</string>
+    <string name="email_address_wont_be_published">Adres email (nie będzie opublikowany)</string>
+    <string name="author_of_the_idea">Autor pomysłu</string>
+    <string name="add_the_picture_optional">Dodaj zdjęcie (opcjonalne)</string>
+
 </resources>

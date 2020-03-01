@@ -23,6 +23,7 @@ import dreamcatcher.zerowasteideas.R
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import dreamcatcher.zerowasteideas.features.appInfoView.AppInfoViewFragment
 import dreamcatcher.zerowasteideas.features.detailedView.DetailedViewFragment
+import dreamcatcher.zerowasteideas.features.detailedView.NewIdeaViewFragment
 import kotlinx.android.synthetic.main.activity_main_collapsing_toolbar.*
 import kotlinx.android.synthetic.main.activity_main_top_panel.*
 import kotlinx.android.synthetic.main.loading_badge.*
@@ -74,6 +75,9 @@ class FeedActivity : AppCompatActivity() {
 
         // Initialize app info button
         initializeAppInfoButton()
+
+        // Initialize app info button
+        initializeNewIdeaButton()
 
         // Initialize "Show more" button
         initializeShowMoreButton()
@@ -383,6 +387,22 @@ class FeedActivity : AppCompatActivity() {
             hideKeyboard()
 
             val fragment = AppInfoViewFragment()
+            val fragmentTransaction = supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.main_content_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    private fun initializeNewIdeaButton() {
+
+        add_idea_button.setOnClickListener {
+
+            // Hide the keyboard just in case to avoid problems with the fragment view displaying
+            // It would be better to have this in Fragment - because of encapsulation - but then it's not so fluent.
+            hideKeyboard()
+
+            val fragment = NewIdeaViewFragment()
             val fragmentTransaction = supportFragmentManager.beginTransaction()
             fragmentTransaction.add(R.id.main_content_container, fragment)
                 .addToBackStack(null)

@@ -10,7 +10,7 @@
 
     <!-- CHANGE -->>
     <string name="facebook_address" translatable="false">https://www.facebook.com/wyrzuctoapp</string>
-    
+
     <string name="privacy_policy_address">https://docs.google.com/document/d/1XSmg_1mvVomIr7hOAaV0rjZ91JWb7VXm/edit?usp=sharing</string>
 
     <string name="privacy_policy_link">Privacy Policy (link)</string>
@@ -61,6 +61,20 @@
     <string name="show_more">Show more</string>
 
     <string name="yes_please">Yes, please</string>
+
+    <string name="title">Title</string>
+
+    <string name="idea_description">Idea description...</string>
+
+    <string name="add_idea">Add idea</string>
+
+    <string name="add_a_new_zero_waste">Add a new Zero Waste idea to the application</string>
+
+    <string name="email_address_wont_be_published">Email address (won\'t be published)</string>
+
+    <string name="author_of_the_idea">Author of the idea</string>
+
+    <string name="add_the_picture_optional">Add a picture (optional)</string>
 
     <string name="footer">Zero Waste Ideas ® 2020</string>
 
