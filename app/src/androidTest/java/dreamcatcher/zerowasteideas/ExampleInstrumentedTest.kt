@@ -1,7 +1,4 @@
-package development.dreamcatcher.howaboutit
-
-import androidx.test.InstrumentationRegistry
-import androidx.test.runner.AndroidJUnit4
+package development.dreamcatcher.zerowasteideas
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -13,7 +10,7 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-@RunWith(AndroidJUnit4::class)
+/*@RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
@@ -22,3 +19,4 @@ class ExampleInstrumentedTest {
         assertEquals("development.dreamcatcher.zerowasteideas", appContext.packageName)
     }
 }
+*/

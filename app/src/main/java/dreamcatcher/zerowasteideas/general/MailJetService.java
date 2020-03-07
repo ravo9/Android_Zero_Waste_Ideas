@@ -1,5 +1,7 @@
 package dreamcatcher.zerowasteideas.general;
 
+import android.util.Log;
+
 import com.mailjet.client.ClientOptions;
 import com.mailjet.client.MailjetClient;
 import com.mailjet.client.MailjetRequest;
@@ -33,8 +35,12 @@ public class MailJetService {
                                 .put(Emailv31.Message.TEXTPART, "My first Mailjet email")
                                 .put(Emailv31.Message.HTMLPART, "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!")
                                 .put(Emailv31.Message.CUSTOMID, "AppGettingStartedTest")));
-        response = client.post(request);
-        System.out.println(response.getStatus());
-        System.out.println(response.getData());
+        try {
+            response = client.post(request);
+            Log.d("MailJet: ", String.valueOf(response.getStatus()));
+            Log.d("MailJet: ", response.getData().toString());
+        } catch (Exception e) {
+            Log.e("MailJet error: ", "NULL value");
+        }
     }
 }

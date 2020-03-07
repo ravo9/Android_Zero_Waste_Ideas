@@ -1,4 +1,4 @@
-package development.dreamcatcher.howaboutit
+package development.dreamcatcher.zerowasteideas
 
 import org.junit.Test
 

@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.FirebaseAnalytics
 import dreamcatcher.zerowasteideas.R
 import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import dreamcatcher.zerowasteideas.features.basic.BasicFragment
@@ -52,7 +53,14 @@ class NewIdeaViewFragment : BasicFragment() {
         }
 
         add_idea_button.setOnClickListener{
-            viewModel.sendNewIdea()
+
+            // Analytics event logging
+            val context = context
+            if (context != null) {
+                val bundle = Bundle()
+                bundle.putString(FirebaseAnalytics.Param.CONTENT, description_input.text.toString())
+                FirebaseAnalytics.getInstance(context).logEvent(getString(R.string.analytics_event_new_idea), bundle)
+            }
         }
     }
 
@@ -71,39 +79,6 @@ class NewIdeaViewFragment : BasicFragment() {
                 setupDetailedView(it)
             })*/
         }
-    }
-
-    // Prepare view to display fetched item
-    private fun setupDetailedView(item: ItemEntity) {
-
-        // Set item's name
-        /*detailed_item_view_name.text = item.name
-
-        // Set bin type's text
-        detailed_item_view_recycling_steps.text = item.binType
-
-        // Set "additional information" to display
-        if (item.additionalInformation != null) {
-            var additionalInformationText = ""
-
-            for (phrase in item.additionalInformation) {
-                additionalInformationText += "✔"
-                additionalInformationText += "  "
-                additionalInformationText += phrase
-                additionalInformationText += "\n\n"
-            }
-            detailed_item_view_additional_info.text = additionalInformationText
-        }
-
-        // Load thumbnail
-        val imageUrl = item.imageLink
-        try { Glide.with(context!!).load(imageUrl).into(thumbnail); }
-        catch (e: Exception) {
-            picture_placeholder_text.visibility = View.VISIBLE
-            Log.e("Exception", e.message);
-        }*/
-
-        showLoadingView(false)
     }
 
     private fun showLoadingView(loadingState: Boolean) {
