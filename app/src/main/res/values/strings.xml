@@ -76,6 +76,14 @@
 
     <string name="add_the_picture_optional">Add a picture (optional)</string>
 
+    <string name="than_you_for_new_idea">Thank you for adding new idea</string>
+
+    <string name="it_will_be_published_soon">It will be published soon by moderator.</string>
+
+    <string name="oops_somethings_missing">Oops, something\'s missing</string>
+
+    <string name="it_seems_that_some_necessary">It seems that some necessary information hasn\'t been provided.</string>
+
     <string name="footer">Zero Waste Ideas ® 2020</string>
 
     <!-- Analytics events names -->

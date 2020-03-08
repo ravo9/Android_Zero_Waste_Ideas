@@ -1,6 +1,8 @@
 package dreamcatcher.zerowasteideas.features.detailedView
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -38,8 +40,7 @@ class NewIdeaViewFragment : BasicFragment() {
 
         // Setup Cross Button
         val closingOnClickListener = View.OnClickListener{
-            hideKeyboard()
-            activity?.onBackPressed()
+            closeFragment()
         }
         btn_cross.setOnClickListener(closingOnClickListener)
 
@@ -57,11 +58,62 @@ class NewIdeaViewFragment : BasicFragment() {
             // Analytics event logging
             val context = context
             if (context != null) {
-                val bundle = Bundle()
-                bundle.putString(FirebaseAnalytics.Param.CONTENT, description_input.text.toString())
-                FirebaseAnalytics.getInstance(context).logEvent(getString(R.string.analytics_event_new_idea), bundle)
+
+                if (isAllNecessaryInformationProvided()) {
+
+                    val bundle = Bundle()
+                    bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, title_input.text.toString())
+                    bundle.putString(FirebaseAnalytics.Param.CONTENT, description_input.text.toString())
+                    bundle.putString(FirebaseAnalytics.Param.ORIGIN, email_input.text.toString())
+                    bundle.putString(FirebaseAnalytics.Param.SOURCE, author_input.text.toString())
+                    FirebaseAnalytics.getInstance(context).logEvent(getString(R.string.analytics_event_new_idea), bundle)
+
+                    // TODO Network problems handling.
+
+                    displayConfirmationDialogbox(it)
+                } else {
+                    displayErrorDialogbox(it)
+                }
             }
         }
+    }
+
+    private fun closeFragment() {
+        hideKeyboard()
+        activity?.onBackPressed()
+    }
+
+    private fun displayConfirmationDialogbox(view: View) {
+
+        // TODO Hard-coded string
+        AlertDialog.Builder(context)
+            .setTitle(getString(R.string.than_you_for_new_idea))
+            .setMessage(getString(R.string.it_will_be_published_soon))
+            .setPositiveButton(getString(R.string.ok)) { dialog: DialogInterface, id: Int ->
+                closeFragment()
+            }
+            .create()
+            .show()
+    }
+
+    private fun displayErrorDialogbox(view: View) {
+
+        // TODO Hard-coded string
+        AlertDialog.Builder(context)
+            .setTitle(getString(R.string.oops_somethings_missing))
+            .setMessage(getString(R.string.it_seems_that_some_necessary))
+            .setPositiveButton(getString(R.string.ok)) { dialog: DialogInterface, id: Int ->
+                //
+            }
+            .create()
+            .show()
+    }
+
+    private fun isAllNecessaryInformationProvided(): Boolean {
+        return !(title_input.text.isEmpty() ||
+                description_input.text.isEmpty() ||
+                email_input.text.isEmpty() ||
+                author_input.text.isEmpty())
     }
 
     private fun hideKeyboard() {

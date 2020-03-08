@@ -47,5 +47,9 @@
     <string name="email_address_wont_be_published">Adres email (nie będzie opublikowany)</string>
     <string name="author_of_the_idea">Autor pomysłu</string>
     <string name="add_the_picture_optional">Dodaj zdjęcie (opcjonalne)</string>
+    <string name="than_you_for_new_idea">Dziękujemy za dodanie pomysłu.</string>
+    <string name="it_will_be_published_soon">Zostanie on dodany niebawem po sprawdzeniu przez moderatora.</string>
+    <string name="oops_somethings_missing">Ups, coś zgubiliśmy</string>
+    <string name="it_seems_that_some_necessary">Zdaje się, że któreś z wymaganych pól nie zostało wypełnione.</string>
 
 </resources>

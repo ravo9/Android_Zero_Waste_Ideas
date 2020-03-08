@@ -100,7 +100,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <Button
                         style="@style/ButtonStyle"
                         android:id="@+id/add_picture_button"
