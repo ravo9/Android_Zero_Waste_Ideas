@@ -72,6 +72,8 @@
 
     <string name="email_address_wont_be_published">Email address (won\'t be published)</string>
 
+    <string name="tags_eg_glass_food_design">Tags, e.g. glass food design</string>
+
     <string name="author_of_the_idea">Author of the idea</string>
 
     <string name="add_the_picture_optional">Add a picture (optional)</string>

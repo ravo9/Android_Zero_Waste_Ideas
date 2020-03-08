@@ -4,17 +4,13 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.bumptech.glide.Glide
 import com.google.firebase.analytics.FirebaseAnalytics
 import dreamcatcher.zerowasteideas.R
-import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import dreamcatcher.zerowasteideas.features.basic.BasicFragment
 import kotlinx.android.synthetic.main.new_item_view.*
 
@@ -34,9 +30,6 @@ class NewIdeaViewFragment : BasicFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        // Fetch detailed data from Data Repository
-        subscribeForItem()
 
         // Setup Cross Button
         val closingOnClickListener = View.OnClickListener{
@@ -64,6 +57,7 @@ class NewIdeaViewFragment : BasicFragment() {
                     val bundle = Bundle()
                     bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, title_input.text.toString())
                     bundle.putString(FirebaseAnalytics.Param.CONTENT, description_input.text.toString())
+                    bundle.putString(FirebaseAnalytics.Param.TAX, tags_input.text.toString())
                     bundle.putString(FirebaseAnalytics.Param.ORIGIN, email_input.text.toString())
                     bundle.putString(FirebaseAnalytics.Param.SOURCE, author_input.text.toString())
                     FirebaseAnalytics.getInstance(context).logEvent(getString(R.string.analytics_event_new_idea), bundle)
@@ -121,15 +115,6 @@ class NewIdeaViewFragment : BasicFragment() {
         view?.let { view ->
             val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
             imm?.let { it.hideSoftInputFromWindow(view.windowToken, 0) }
-        }
-    }
-
-    private fun subscribeForItem() {
-        val itemId = this.arguments?.getString("itemId")
-        if (!itemId.isNullOrEmpty()) {
-            /*viewModel.getSingleSavedItemById(itemId)?.observe(this, Observer<ItemEntity> {
-                setupDetailedView(it)
-            })*/
         }
     }
 

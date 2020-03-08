@@ -45,6 +45,7 @@
     <string name="add_idea">Dodaj pomysł</string>
     <string name="add_a_new_zero_waste">Dodaj nowy pomysł Zero Waste do aplikacji</string>
     <string name="email_address_wont_be_published">Adres email (nie będzie opublikowany)</string>
+    <string name="tags_eg_glass_food_design">Tagi, np. szkło jedzenie ogród</string>
     <string name="author_of_the_idea">Autor pomysłu</string>
     <string name="add_the_picture_optional">Dodaj zdjęcie (opcjonalne)</string>
     <string name="than_you_for_new_idea">Dziękujemy za dodanie pomysłu.</string>
