@@ -1,10 +1,7 @@
 package dreamcatcher.zerowasteideas.network
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.SingleSubject
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -15,9 +12,6 @@ import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 // Interactor used for communication between data repository and the external API
 class ItemsNetworkInteractor {
 
-    private val apiClient = NetworkAdapter.apiClient()
-    val networkError: MutableLiveData<Boolean> = MutableLiveData()
-
     fun getAllItemsFirebaseDb(): Observable<Result<List<ItemEntity>>>  {
         val allItemsSubject = SingleSubject.create<Result<List<ItemEntity>>>()
         val database = FirebaseDatabase.getInstance().reference
@@ -25,7 +19,6 @@ class ItemsNetworkInteractor {
         query.addListenerForSingleValueEvent(object : ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-
                 val itemsList = ArrayList<ItemEntity>()
                 for (item in dataSnapshot.children) {
 
@@ -56,33 +49,11 @@ class ItemsNetworkInteractor {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                networkError.postValue(true)
+                allItemsSubject.onError(databaseError.toException())
                 Log.e("getItems() error: ", databaseError.message)
             }
+
         })
-
-        return allItemsSubject.toObservable()
-    }
-
-    fun getAllItems(): Observable<Result<List<ItemPojo>>> {
-        val allItemsSubject = SingleSubject.create<Result<List<ItemPojo>>>()
-
-        apiClient.getItems()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    if (it != null) {
-                        allItemsSubject.onSuccess(Result.success(it!!))
-                        //connectionEstablishedStatus.postValue(true)
-                    } else {
-                        Log.e("getItems() error: ", "NULL value")
-                    }
-                },
-                {
-                    networkError.postValue(true)
-                    Log.e("getItems() error: ", it.message)
-                })
 
         return allItemsSubject.toObservable()
     }

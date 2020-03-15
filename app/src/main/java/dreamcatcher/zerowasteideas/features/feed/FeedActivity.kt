@@ -11,6 +11,7 @@ import android.view.View
 import android.view.animation.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.annotation.MainThread
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.doOnLayout
@@ -24,6 +25,8 @@ import dreamcatcher.zerowasteideas.data.database.items.ItemEntity
 import dreamcatcher.zerowasteideas.features.appInfoView.AppInfoViewFragment
 import dreamcatcher.zerowasteideas.features.detailedView.DetailedViewFragment
 import dreamcatcher.zerowasteideas.features.detailedView.NewIdeaViewFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main_collapsing_toolbar.*
 import kotlinx.android.synthetic.main.activity_main_top_panel.*
 import kotlinx.android.synthetic.main.loading_badge.*
@@ -68,7 +71,8 @@ class FeedActivity : AppCompatActivity() {
         subscribeForNetworkError()
 
         // Fetch items from the backend and load them into the view
-        updateAndLoadItems()
+        loadItemsFromBackend()
+        //updateAndLoadItems()
 
         // Initialize search engine
         //initializeSearchEngine()
@@ -97,124 +101,6 @@ class FeedActivity : AppCompatActivity() {
 
         // Prevent displaying the keyboard when the app is resumed from the background
         currentFocus?.clearFocus()
-    }
-
-    /*override fun onBackPressed() {
-        if (mostRecentSearchPhrase != "") resetSearchResults()
-        else super.onBackPressed()
-    }*/
-
-    /*private fun resetSearchResults() {
-        search_engine.text.clear()
-        allowedItemsAmount = 24
-        searchAction()
-    }*/
-
-    /*private fun filterResultsToDisplay(phrase: String) {
-
-        itemsToDisplay.clear()
-
-        // Check if the name of each element contains searched phrase. If not - remove this element.
-        allItemsList.forEach {
-            if (nameContainsSearchedPhrase(it, phrase) || tagsContainSearchedPhrase(it, phrase)) {
-                itemsToDisplay.add(it)
-            }
-        }
-
-        allowedItemsAmount = 24
-
-        // Send a new list to adapter to display them.
-        updateDisplayedItems()
-
-        // Update ShowMore button visibility.
-        updateShowMoreButton()
-
-        // Analytics event logging.
-        /*if (itemsToDisplay.isEmpty()) {
-            val bundle = Bundle()
-            bundle.putString(FirebaseAnalytics.Param.SEARCH_TERM, phrase)
-            FirebaseAnalytics.getInstance(this).logEvent(FirebaseAnalytics.Event.SEARCH, bundle)
-        }*/
-    }*/
-
-    /*private fun nameContainsSearchedPhrase(itemEntity: ItemEntity, phrase: String): Boolean {
-        return (itemEntity.name.toLowerCase().contains(phrase.toLowerCase()))
-    }
-
-    private fun tagsContainSearchedPhrase(itemEntity: ItemEntity, phrase: String): Boolean {
-        itemEntity.tags.forEach {
-            if (it.toLowerCase().contains(phrase.toLowerCase())) {
-                return true
-            }
-        }
-        return false
-    }*/
-
-    /*private fun initializeSearchEngine() {
-
-        search_engine.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(p0: Editable?) {
-
-                /*handler.post{
-                    filterResultsToDisplay(p0.toString())
-                }*/
-
-                if (p0.toString().equals("")) {
-                    handler.post {
-                        resetSearchResults()
-                    }
-                }
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-        })
-
-        // 'Enter' key on the keyboard
-        search_engine.setOnEditorActionListener { v, actionId, event ->
-            if (actionId != EditorInfo.IME_ACTION_NONE && actionId != EditorInfo.IME_ACTION_PREVIOUS) {
-                searchAction()
-                true
-            } else {
-                false
-            }
-        }
-
-        // 'Search' button
-        search_button.setOnClickListener{
-            searchAction()
-        }
-    }*/
-
-    private fun searchAction() {
-
-        // Update searching and tags system from BinAssistant when necessary.
-
-        /*allowedItemsAmount = 24
-
-        search_button.isEnabled = false
-
-        hideNoResultsAndThankYouViews()
-
-        if (!search_engine.text.toString().equals(mostRecentSearchPhrase)) {
-            mostRecentSearchPhrase = search_engine.text.toString()
-            filterResultsToDisplay(mostRecentSearchPhrase)
-
-            // Button color change.
-            search_button.postDelayed({
-                search_button.isEnabled = true
-            }, 500)
-        } else {
-
-            // Button color change.
-            search_button.postDelayed({
-                search_button.isEnabled = true
-            }, 100)
-        }
-
-        hideKeyboard()*/
     }
 
     private fun setupRecyclerView() {
@@ -247,43 +133,31 @@ class FeedActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun updateAndLoadItems() {
-        viewModel.updateItemsDatabaseWithServer()?.observe(this, Observer<Boolean> {
+    private fun loadItemsFromBackend() {
+        viewModel.getAllItems()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
 
-            if (it == true) {
-                loadItemsFromDatabase()
-            }
-        })
-    }
+                if (it.isSuccess) {
+                    it.getOrNull()?.let {
+                        generalListAdapter.setItems(it)
+                    }
 
-    private fun loadItemsFromDatabase() {
-        viewModel.getAllItems()?.observe(this, Observer<List<ItemEntity>> {
 
-            if (!it.isNullOrEmpty()) {
-
-                // For some weird reason the data comes first in smaller parties. I don't know why,
-                // but to fix it I have added this 'if' condition temporarily.
-                // Probably that's the reason of "repeated items issue".
-                if (it.size > allowedItemsAmount) {
-
-                    // Display fetched items (using adapter)
-                    allItemsList.clear()
-                    // Mix the items to avoid the same order on every app launch.
-                    allItemsList.addAll(it.shuffled())
-                    itemsFetchedSuccessfullyFlag = true
-                    sendItemsToAdapter()
                 }
+
             }
-        })
     }
+
 
     private fun subscribeForNetworkError() {
-        viewModel.getNetworkError()?.observe(this, Observer<Boolean> {
+        /*viewModel.getNetworkError()?.observe(this, Observer<Boolean> {
             Handler().postDelayed({
                 displayNetworkProblemMessage()
                 retryConnection()
             }, 600)
-        })
+        })*/
     }
 
     private fun sendItemsToAdapter() {
@@ -315,8 +189,8 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun retryConnection() {
-        viewModel.updateItemsDatabaseWithServer()?.removeObservers(this)
-        updateAndLoadItems()
+        //viewModel.updateItemsDatabaseWithServer()?.removeObservers(this)
+        //updateAndLoadItems()
     }
 
     private fun hideKeyboard() {
@@ -412,7 +286,7 @@ class FeedActivity : AppCompatActivity() {
 
     private fun initializeShowMoreButton() {
 
-        show_more_button.setOnClickListener {
+        /*show_more_button.setOnClickListener {
 
             allowedItemsAmount += 24
 
@@ -421,7 +295,7 @@ class FeedActivity : AppCompatActivity() {
 
             // Update ShowMore button visibility.
             updateShowMoreButton()
-        }
+        }*/
     }
 
     private fun initializeYesPleaseButton() {
