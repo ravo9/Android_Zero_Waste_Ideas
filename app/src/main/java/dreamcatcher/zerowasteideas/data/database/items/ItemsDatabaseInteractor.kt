@@ -3,7 +3,6 @@ package dreamcatcher.zerowasteideas.data.database.items
 import androidx.lifecycle.LiveData
 import androidx.room.Room
 import dreamcatcher.zerowasteideas.general.ZeroWasteIdeasApp
-import dreamcatcher.zerowasteideas.network.ItemPojo
 import io.reactivex.Observable
 import io.reactivex.subjects.SingleSubject
 import kotlinx.coroutines.launch
@@ -29,25 +28,17 @@ class ItemsDatabaseInteractor() {
     }
 
     // This function should be checked again.
-    fun addItemsSet(itemsSet: List<ItemPojo>): Observable<Result<Boolean>> {
+    fun addItemsSet(itemsSet: List<ItemEntity>): Observable<Result<Boolean>> {
 
         val dataUpdateFinishedStatus = SingleSubject.create<Result<Boolean>>()
 
         launch {
             itemsDatabase?.getItemsDao()?.clearDatabase().also {
                 itemsSet.forEach {
-                    val itemEntity = ItemEntity(
-                        id = it.id,
-                        authorName = it.authorName,
-                        title = it.title,
-                        description = it.description,
-                        //tags = it.tags.split(" "),
-                        imageLink = it.imageLink)
                     launch {
-                        itemsDatabase?.getItemsDao()?.insertNewItem(itemEntity)
+                        itemsDatabase?.getItemsDao()?.insertNewItem(it)
                     }
                 }
-
             }.also {
                 dataUpdateFinishedStatus.onSuccess(Result.success(true))
             }

@@ -6,16 +6,25 @@ import com.google.gson.annotations.SerializedName
 data class ItemPojo(
 
     @SerializedName("ID")
-    val id: String,
+    val id: String?,
 
     @SerializedName("Author name")
-    val authorName: String,
+    val authorName: String?,
 
     @SerializedName("Title")
-    val title: String,
+    val title: String?,
 
     @SerializedName("Description")
-    val description: String,
+    val description: String?,
+
+    @SerializedName("Tags")
+    val tags: List<String>?,
 
     @SerializedName("Image")
-    val imageLink: String?)
+    val imageLink: String?,
+
+    @SerializedName("Current grade")
+    val currentGrade: Int?,
+
+    @SerializedName("Amount of grades")
+    val amountOfGrades: Int?)

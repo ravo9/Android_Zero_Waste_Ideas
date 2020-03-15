@@ -35,7 +35,7 @@ class ItemsRepository () {
         val dataUpdateFinishedStatus = MutableLiveData<Boolean>()
 
         // Fetch items
-        networkInteractor.getAllItems().subscribe {
+        networkInteractor.getAllItemsFirebaseDb().subscribe {
             if (it.isSuccess && it.getOrDefault(null)?.size!! > 0) {
 
                 val itemsSet = it.getOrNull()

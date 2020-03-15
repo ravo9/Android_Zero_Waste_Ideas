@@ -60,24 +60,29 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
             // Prepare fetched data
             val title =  item.title
             val description =  item.description
+            val tags =  item.tags?.joinToString(" #")
+            // TODO # at the beginning.
+            val authorName =  item.authorName
             var imageLink = item.imageLink
 
             // Set data within the holder
             holder.title.text = title
             holder.description.text = description
+            tags?.let{ holder.tags.text = it }
+            holder.author.text = authorName
 
             // Set onClickListener
             val itemId = item.id
             holder.container.setOnClickListener{
-                clickListener(itemId)
+                //clickListener(itemId)
             }
 
             // Load thumbnail
-            if (!imageLink.isNullOrEmpty()) {
+            /*if (!imageLink.isNullOrEmpty()) {
                 Picasso.get().load(imageLink).into(holder.thumbnail)
             } else {
                 holder.thumbnail.visibility = View.GONE
-            }
+            }*/
 
         } catch(e: Exception) {
             Log.e("Exception", e.message);
@@ -90,17 +95,9 @@ class GeneralListAdapter (private val clickListener: (String) -> Unit) : Recycle
     open inner class OwnViewHolder (view: View) : ViewHolder(view) {
         val title = view.title
         val description = view.description
+        val tags = view.tags
+        val author = view.author
         val thumbnail = view.thumbnail
         val container = view.single_item_container
-    }
-
-    // Converter grouping items together into 2-items clusters
-    private fun convertSingleItemsListIntoClustersList(itemsList: List<ItemEntity>)
-            : List<List<ItemEntity>> {
-        val clustersList = ArrayList<List<ItemEntity>>()
-        itemsList.chunked(2).forEach {
-            clustersList.add(it)
-        }
-        return clustersList
     }
 }

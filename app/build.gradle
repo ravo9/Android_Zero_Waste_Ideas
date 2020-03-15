@@ -72,6 +72,7 @@ dependencies {
 
     // Room
     implementation "androidx.room:room-runtime:$room_version"
+    implementation 'com.google.firebase:firebase-database:16.0.4'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
 
@@ -118,6 +119,9 @@ dependencies {
 
     // Firebase Cloud Messaging
     implementation "com.google.firebase:firebase-messaging:$firebase_cloud_messaging_version"
+
+    // Firebase Database
+    implementation 'com.google.firebase:firebase-database:19.2.1'
 
     // 'Work' library
     implementation "android.arch.work:work-runtime:$work_library_version"

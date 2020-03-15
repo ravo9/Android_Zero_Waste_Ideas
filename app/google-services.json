@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "207434560740-ffjev0sh5bg1ncn9ba4dq9vdd20s4nlc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "development.dreamcatcher.zerowasteideas",
+            "certificate_hash": "d11cbb3112db0339c939879384493f6776b1c25b"
+          }
+        },
+        {
           "client_id": "207434560740-glh8euv3prndupqrmdqj5arlgg2nb36r.apps.googleusercontent.com",
           "client_type": 3
         }
